@@ -1,0 +1,37 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://b6jf8omhgvl46"]
+
+[ext_resource type="FontFile" uid="uid://chemetfbn482a" path="res://assets/nokia_cellphone/nokiafc22.ttf" id="1_w1sqr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w1sqr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_octwt"]
+bg_color = Color(0.0807833, 0.0807834, 0.0807833, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w1sqr"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cqnxl"]
+bg_color = Color(0, 0.86, 0.043, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2i45n"]
+bg_color = Color(0.266575, 0.266575, 0.266575, 1)
+border_width_left = 1
+border_width_top = 1
+border_color = Color(0.396889, 0.396889, 0.396889, 1)
+expand_margin_left = 3.0
+expand_margin_top = 33.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+shadow_color = Color(0, 0, 0, 0.517647)
+shadow_size = 5
+
+[resource]
+default_font = ExtResource("1_w1sqr")
+Button/styles/focus = SubResource("StyleBoxEmpty_w1sqr")
+Panel/styles/panel = SubResource("StyleBoxFlat_octwt")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_w1sqr")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_cqnxl")
+Window/constants/close_h_offset = 19
+Window/constants/close_v_offset = 26
+Window/constants/title_height = 35
+Window/styles/embedded_border = SubResource("StyleBoxFlat_2i45n")

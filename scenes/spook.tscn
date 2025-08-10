@@ -1,0 +1,105 @@
+[gd_scene load_steps=17 format=3 uid="uid://cbcdv0qu3yepy"]
+
+[ext_resource type="Texture2D" uid="uid://bfvr15o8u3gqm" path="res://assets/file6blur.png" id="1_5tu38"]
+[ext_resource type="Texture2D" uid="uid://cvece2rfubwp2" path="res://assets/checkmarkdisabled.png" id="1_e5hca"]
+[ext_resource type="Texture2D" uid="uid://db04uf5yp3tc5" path="res://assets/file6blurglitch.png" id="2_b6m3f"]
+[ext_resource type="Texture2D" uid="uid://dyci8dyh4a0xg" path="res://assets/file6blurglitch1.png" id="3_713it"]
+[ext_resource type="Texture2D" uid="uid://dcsxllx6vsapj" path="res://assets/file6blurmissingno.png" id="4_ar37i"]
+[ext_resource type="Texture2D" uid="uid://csup1coqdcvsx" path="res://assets/file6-4.png" id="5_e5hca"]
+[ext_resource type="Texture2D" uid="uid://dwmd66uig0c4a" path="res://assets/file6-3.png" id="6_a4ylq"]
+[ext_resource type="Texture2D" uid="uid://dcmt3iwix4g0w" path="res://assets/maincharfall8.png" id="6_i67ai"]
+[ext_resource type="Texture2D" uid="uid://dn6yxai8qkfwb" path="res://assets/file6scribble1.png" id="8_a4ylq"]
+[ext_resource type="Texture2D" uid="uid://dncgjpcuoagxx" path="res://assets/file6scribble2.png" id="9_c6ub4"]
+[ext_resource type="Script" uid="uid://hy3s8dufjexx" path="res://scripts/spook.gd" id="10_i67ai"]
+[ext_resource type="FontFile" uid="uid://0xix01oe4hh6" path="res://assets/windows_command_prompt/windows_command_prompt.ttf" id="11_a4ylq"]
+[ext_resource type="AudioStream" uid="uid://bce460m2ii1s8" path="res://assets/noise.wav" id="12_c6ub4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c6ub4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_e5hca")
+}],
+"loop": true,
+"name": &"ae",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5tu38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_b6m3f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_713it")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ar37i")
+}],
+"loop": true,
+"name": &"spook_blur",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_i67ai")
+}],
+"loop": true,
+"name": &"spook_death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_e5hca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_a4ylq")
+}],
+"loop": true,
+"name": &"spook_file6",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_a4ylq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_c6ub4")
+}],
+"loop": true,
+"name": &"spook_scribble",
+"speed": 20.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c6ub4"]
+font = ExtResource("11_a4ylq")
+font_color = Color(1, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i67ai"]
+
+[node name="spook" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_c6ub4")
+animation = &"spook_death"
+frame_progress = 0.723342
+script = ExtResource("10_i67ai")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -59.0
+offset_top = -81.0
+offset_right = 60.0
+offset_bottom = -58.0
+text = "INSERT SPOOK HERE"
+label_settings = SubResource("LabelSettings_c6ub4")
+horizontal_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_i67ai")
+debug_color = Color(1, 0, 1, 0.694118)
+
+[node name="Noise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_c6ub4")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

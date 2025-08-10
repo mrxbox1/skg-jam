@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://baof5c1432yv8"]
+
+[ext_resource type="Texture2D" uid="uid://deu2ryfvftkfj" path="res://assets/tileset.png" id="1_r4oei"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r4oei"]
+radius = 11.0
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_r4oei")
+region_enabled = true
+region_rect = Rect2(48, 32, 16, 16)
+
+[node name="Win" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Win"]
+shape = SubResource("CircleShape2D_r4oei")

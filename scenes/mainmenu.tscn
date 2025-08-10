@@ -1,0 +1,105 @@
+[gd_scene load_steps=7 format=4 uid="uid://crjkur0fbmgw6"]
+
+[ext_resource type="Theme" uid="uid://b6jf8omhgvl46" path="res://scenes/default_theme.tres" id="1_3vvtq"]
+[ext_resource type="Texture2D" uid="uid://6oshxmrabk68" path="res://assets/checkmarkenabled.png" id="1_natt5"]
+[ext_resource type="Script" uid="uid://7cows06gyc2p" path="res://scripts/startbutton.gd" id="2_7yvfd"]
+[ext_resource type="Texture2D" uid="uid://cvece2rfubwp2" path="res://assets/checkmarkdisabled.png" id="2_r3g3c"]
+[ext_resource type="Script" uid="uid://blkxn5kcoxto4" path="res://scripts/start_check.gd" id="3_r3g3c"]
+[ext_resource type="TileSet" uid="uid://c7koxfslviwkq" path="res://scenes/tileset.tres" id="5_s5g8n"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD+/xQAAAABAAEAAAD//xQAAAABAAEAAAAAABQAAAABAAEAAAABABQAAAABAAEAAAACABQAAAACAAEAAAADABQAAAACAAEAAAAEABQAAAACAAEAAAAFABQAAAACAAEAAAAGABQAAAACAAEAAAAHABQAAAACAAEAAAAIABQAAAACAAEAAAAJABQAAAACAAEAAAAKABQAAAACAAEAAAALABQAAAABAAEAAAAMABQAAAABAAEAAAANABQAAAABAAEAAAAOABQAAAABAAEAAAAPABQAAAABAAEAAAAQABQAAAABAAEAAAARABQAAAABAAEAAAASABQAAAABAAEAAAATABMAAAABAAEAAAAUABMAAAABAAEAAAAVABMAAAABAAEAAAAWABMAAAABAAEAAAAXABMAAAABAAEAAAAYABMAAAABAAEAAAAZABMAAAABAAEAAAAaABMAAAABAAEAAAAbABMAAAABAAEAAAAcABMAAAABAAEAAAAdABMAAAABAAEAAAAeABMAAAABAAEAAAAfABMAAAABAAEAAAAgABIAAAABAAEAAAAhABIAAAABAAEAAAAiABIAAAABAAEAAAAjABIAAAABAAEAAAAkABIAAAABAAEAAAAlABIAAAABAAEAAAAmABIAAAABAAEAAAAnABIAAAABAAEAAAAoABIAAAABAAEAAAApABIAAAABAAEAAAD9/xUAAAABAAIAAAD9/xYAAAABAAIAAAD+/xUAAAABAAIAAAD+/xYAAAABAAIAAAD//xUAAAABAAIAAAD//xYAAAABAAIAAAAAABUAAAABAAIAAAAAABYAAAABAAIAAAABABUAAAABAAIAAAABABYAAAABAAIAAAACABUAAAACAAIAAAACABYAAAACAAIAAAADABUAAAACAAIAAAADABYAAAACAAIAAAAEABUAAAACAAIAAAAEABYAAAACAAIAAAAFABUAAAACAAIAAAAFABYAAAACAAIAAAAGABUAAAACAAIAAAAGABYAAAACAAIAAAAHABUAAAACAAIAAAAHABYAAAACAAIAAAAIABUAAAACAAIAAAAIABYAAAACAAIAAAAJABUAAAACAAIAAAAJABYAAAACAAIAAAAKABUAAAACAAIAAAAKABYAAAACAAIAAAALABUAAAABAAIAAAALABYAAAABAAIAAAAMABUAAAABAAIAAAAMABYAAAABAAIAAAANABUAAAABAAIAAAANABYAAAABAAIAAAAOABUAAAABAAIAAAAOABYAAAABAAIAAAAPABUAAAABAAIAAAAPABYAAAABAAIAAAAQABUAAAABAAIAAAAQABYAAAABAAIAAAARABUAAAABAAIAAAARABYAAAABAAIAAAASABUAAAABAAIAAAASABYAAAABAAIAAAATABQAAAABAAIAAAATABUAAAABAAIAAAATABYAAAABAAMAAAAUABQAAAABAAIAAAAUABUAAAABAAIAAAAUABYAAAABAAMAAAAVABQAAAABAAIAAAAVABUAAAABAAIAAAAVABYAAAABAAMAAAAWABQAAAABAAIAAAAWABUAAAABAAIAAAAWABYAAAABAAMAAAAXABQAAAABAAIAAAAXABUAAAABAAIAAAAXABYAAAABAAMAAAAYABQAAAABAAIAAAAYABUAAAABAAIAAAAYABYAAAABAAMAAAAZABQAAAABAAIAAAAZABUAAAABAAIAAAAZABYAAAABAAMAAAAaABQAAAABAAIAAAAaABUAAAABAAIAAAAaABYAAAABAAMAAAAbABQAAAABAAIAAAAbABUAAAABAAIAAAAbABYAAAABAAMAAAAcABQAAAABAAIAAAAcABUAAAABAAIAAAAcABYAAAABAAMAAAAdABQAAAABAAIAAAAdABUAAAABAAIAAAAdABYAAAABAAMAAAAeABQAAAABAAIAAAAeABUAAAABAAIAAAAeABYAAAABAAMAAAAfABQAAAABAAIAAAAfABUAAAABAAIAAAAfABYAAAABAAMAAAAgABMAAAABAAIAAAAgABQAAAABAAIAAAAgABUAAAABAAMAAAAhABMAAAABAAIAAAAhABQAAAABAAIAAAAhABUAAAABAAMAAAAiABMAAAABAAIAAAAiABQAAAABAAIAAAAiABUAAAABAAMAAAAjABMAAAABAAIAAAAjABQAAAABAAIAAAAjABUAAAABAAMAAAAkABMAAAABAAIAAAAkABQAAAABAAIAAAAkABUAAAABAAMAAAAlABMAAAABAAIAAAAlABQAAAABAAIAAAAlABUAAAABAAMAAAAmABMAAAABAAIAAAAmABQAAAABAAIAAAAmABUAAAABAAMAAAAnABMAAAABAAIAAAAnABQAAAABAAIAAAAnABUAAAABAAMAAAAoABMAAAABAAIAAAAoABQAAAABAAIAAAAoABUAAAABAAMAAAApABMAAAABAAIAAAApABQAAAABAAIAAAApABUAAAABAAMAAAAgABYAAAAEAAAAAAAhABYAAAAEAAAAAAAiABYAAAAEAAAAAAAjABYAAAAEAAAAAAAkABYAAAAEAAAAAAAlABYAAAAEAAAAAAAmABYAAAAEAAAAAAAnABYAAAAEAAAAAAAoABYAAAAEAAAAAAApABYAAAAEAAAAAAALABMAAAABAAAAAAAMABMAAAABAAAAAAANABMAAAABAAAAAAAOABMAAAABAAAAAAAPABMAAAABAAAAAAAUABIAAAABAAAAAAAVABIAAAABAAAAAAAWABIAAAABAAAAAAAXABIAAAABAAAAAAAYABIAAAABAAAAAAAZABIAAAABAAAAAAAaABIAAAABAAAAAAAbABIAAAABAAAAAAAcABIAAAABAAAAAAAdABIAAAABAAAAAAAeABIAAAABAAAAAAAfABIAAAABAAAAAAAgABEAAAABAAAAAAAhABEAAAABAAAAAAAiABEAAAABAAAAAAAjABEAAAABAAAAAAAkABEAAAABAAAAAAAlABEAAAABAAAAAAAmABEAAAABAAAAAAAnABEAAAABAAAAAAAoABEAAAABAAAAAAApABEAAAABAAAAAAD//xMAAAABAAAAAAAAABMAAAABAAAAAAABABMAAAABAAAAAAARABMAAAABAAAAAAA=")
+tile_set = ExtResource("5_s5g8n")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_3vvtq")
+text = "Start game"
+script = ExtResource("2_7yvfd")
+
+[node name="Button3" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_3vvtq")
+text = "Quit"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -49.0
+offset_right = 223.0
+grow_vertical = 0
+theme = ExtResource("1_3vvtq")
+text = "v1.0
+made by blueice15"
+vertical_alignment = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_3vvtq")
+bbcode_enabled = true
+text = "[color=red]Warning:[/color]
+This game is not suitable for children or people who are sensitive to subjects like death, pain, and gore.
+
+The game is intended to be played in one sitting. You will not be able to save your progress. However, the game may or may not recognize some progress. But still, take this warning seriously: [color=red]A lost game is a lost game.[/color]
+
+By continuing, you have read the warning and understood it."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CheckBox" type="CheckBox" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 146.0
+offset_top = -40.0
+offset_right = -135.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_3vvtq")
+theme_override_icons/checked = ExtResource("1_natt5")
+theme_override_icons/unchecked = ExtResource("2_r3g3c")
+text = "I accept the consequences of my actions."
+flat = true
+script = ExtResource("3_r3g3c")
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="CenterContainer/VBoxContainer/Button" method="_on_pressed"]
+[connection signal="pressed" from="ColorRect/CheckBox" to="ColorRect/CheckBox" method="_on_pressed"]

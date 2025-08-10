@@ -1,0 +1,75 @@
+[gd_scene load_steps=12 format=3 uid="uid://s8khpvck5ve3"]
+
+[ext_resource type="Texture2D" uid="uid://l585gqvasra" path="res://assets/file6-0.png" id="1_f8utq"]
+[ext_resource type="Texture2D" uid="uid://4obfp2outfmj" path="res://assets/file6-1.png" id="2_ash6y"]
+[ext_resource type="Texture2D" uid="uid://crkuxeoxomo2n" path="res://assets/file6-2.png" id="3_or78g"]
+[ext_resource type="Texture2D" uid="uid://dwmd66uig0c4a" path="res://assets/file6-3.png" id="4_ifb36"]
+[ext_resource type="Texture2D" uid="uid://csup1coqdcvsx" path="res://assets/file6-4.png" id="5_c8o3h"]
+[ext_resource type="Script" uid="uid://ckw5eca2adi37" path="res://scripts/file_6.gd" id="6_or78g"]
+[ext_resource type="FontFile" uid="uid://0xix01oe4hh6" path="res://assets/windows_command_prompt/windows_command_prompt.ttf" id="7_ifb36"]
+[ext_resource type="AudioStream" uid="uid://bce460m2ii1s8" path="res://assets/noise.wav" id="8_ifb36"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_spg7e"]
+animations = [{
+"frames": [{
+"duration": 10.0,
+"texture": ExtResource("3_or78g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ifb36")
+}],
+"loop": true,
+"name": &"consequences",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_f8utq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ash6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_or78g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ifb36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_c8o3h")
+}],
+"loop": true,
+"name": &"file6",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_60ibb"]
+radius = 27.074
+
+[sub_resource type="LabelSettings" id="LabelSettings_c8o3h"]
+font = ExtResource("7_ifb36")
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="FILE6" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_spg7e")
+animation = &"consequences"
+script = ExtResource("6_or78g")
+
+[node name="DEATH" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DEATH"]
+shape = SubResource("CircleShape2D_60ibb")
+debug_color = Color(0.960075, 0.201416, 1.92523e-07, 0.42)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "YOU'RE TAKING TOO LONG"
+label_settings = SubResource("LabelSettings_c8o3h")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_ifb36")
+autoplay = true

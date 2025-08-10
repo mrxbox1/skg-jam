@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://60k4f6ruyhjp"]
+
+[ext_resource type="Texture2D" uid="uid://f87e502tbxws" path="res://assets/lever1.png" id="1_qxmkn"]
+[ext_resource type="Texture2D" uid="uid://fyhloagwypgx" path="res://assets/lever2.png" id="2_8di2w"]
+[ext_resource type="Script" uid="uid://1hqsn8si84ti" path="res://scripts/lever.gd" id="3_dkrws"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_efr3d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qxmkn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8di2w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3flmr"]
+radius = 13.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_efr3d")
+script = ExtResource("3_dkrws")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_3flmr")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

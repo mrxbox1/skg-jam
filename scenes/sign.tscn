@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0cv4vwxse0cg"]
+
+[ext_resource type="Script" uid="uid://dmx6y3f7g7tq" path="res://scripts/sign.gd" id="1_8yyji"]
+[ext_resource type="Texture2D" uid="uid://bqhn8kci4b6pc" path="res://assets/nineslice.png" id="1_kd50q"]
+[ext_resource type="Theme" uid="uid://b6jf8omhgvl46" path="res://scenes/default_theme.tres" id="2_8yyji"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0tk13"]
+radius = 24.0832
+
+[node name="Sign" type="Area2D"]
+script = ExtResource("1_8yyji")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 96)
+shape = SubResource("CircleShape2D_0tk13")
+debug_color = Color(0.875439, 0.000422588, 0.835585, 0.42)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("1_kd50q")
+region_rect = Rect2(0, 0, 32, 32)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 9
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("2_8yyji")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "Hello, World!"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 2
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

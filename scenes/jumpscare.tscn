@@ -1,0 +1,144 @@
+[gd_scene load_steps=10 format=3 uid="uid://dntbd11vbhula"]
+
+[ext_resource type="Texture2D" uid="uid://crkuxeoxomo2n" path="res://assets/file6-2.png" id="1_25u87"]
+[ext_resource type="Texture2D" uid="uid://dwmd66uig0c4a" path="res://assets/file6-3.png" id="2_ggdb2"]
+[ext_resource type="Texture2D" uid="uid://4obfp2outfmj" path="res://assets/file6-1.png" id="3_hdk1o"]
+[ext_resource type="Texture2D" uid="uid://l585gqvasra" path="res://assets/file6-0.png" id="4_gngul"]
+[ext_resource type="AudioStream" uid="uid://ddx2nujk4qlq5" path="res://assets/jumpscare.ogg" id="5_ggdb2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y74jy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_25u87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ggdb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hdk1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gngul")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_ggdb2"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_25u87"]
+resource_name = "jumpscare"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.58, 0.6, 0.68),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2, 2), Vector2(2, 2), Vector2(1, 1), Vector2(5, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.666667, 0.833333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.76667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hdk1o"]
+_data = {
+&"RESET": SubResource("Animation_ggdb2"),
+&"jumpscare": SubResource("Animation_25u87")
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -25.0
+offset_right = 678.0
+offset_bottom = 394.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(320, 180)
+sprite_frames = SubResource("SpriteFrames_y74jy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_hdk1o")
+}
+autoplay = "jumpscare"
+
+[node name="Jumpscare" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ggdb2")
+autoplay = true
