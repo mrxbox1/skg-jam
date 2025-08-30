@@ -11,13 +11,19 @@ func _ready() -> void:
 		get_tree().change_scene_to_packed(judgement)
 	else:
 		print("Start")
-	
 
 func switch_scene_to_file(scenefile: String) -> void:
 	get_tree().change_scene_to_file("res://scenes/" + scenefile)
 
 func goto_mainmenu() -> void:
 	get_tree().change_scene_to_packed(mainmenu)
+	
+func save_settings(sfx:float, music:float, brightness:float) -> void:
+	var conf = ConfigFile.new()
+	conf.set_value("PREFERENCES", "SFX", sfx)
+	conf.set_value("PREFERENCES", "MUSIC", music)
+	conf.set_value("PREFERENCES", "BRIGHTNESS", brightness)
+	conf.save("res://preferences.cfg")
 
 func kill_game() -> void:
 	await get_tree().create_timer(4.0).timeout

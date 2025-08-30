@@ -36,6 +36,13 @@ theme = ExtResource("1_3vvtq")
 text = "Start game"
 script = ExtResource("2_7yvfd")
 
+[node name="Button2" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_3vvtq")
+text = "Settings"
+script = ExtResource("2_7yvfd")
+scene = "settings.tscn"
+
 [node name="Button3" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_3vvtq")
@@ -102,4 +109,5 @@ flat = true
 script = ExtResource("3_r3g3c")
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="CenterContainer/VBoxContainer/Button" method="_on_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button2" to="CenterContainer/VBoxContainer/Button2" method="_on_pressed"]
 [connection signal="pressed" from="ColorRect/CheckBox" to="ColorRect/CheckBox" method="_on_pressed"]

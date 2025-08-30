@@ -353,5 +353,5 @@ volume_db = 3.0
 [connection signal="area_entered" from="SafetyArea" to="." method="_on_safety_area_area_entered"]
 [connection signal="area_entered" from="Nostrils" to="." method="_on_nostrils_area_entered"]
 [connection signal="area_entered" from="Nostrils" to="." method="_on_safety_area_area_entered"]
-[connection signal="area_exited" from="Nostrils" to="." method="_on_safety_area_area_exited"]
 [connection signal="area_exited" from="Nostrils" to="." method="_on_nostrils_area_exited"]
+[connection signal="area_exited" from="Nostrils" to="." method="_on_safety_area_area_exited"]

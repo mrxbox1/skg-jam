@@ -1,8 +1,24 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://b6jf8omhgvl46"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://b6jf8omhgvl46"]
 
 [ext_resource type="FontFile" uid="uid://chemetfbn482a" path="res://assets/nokia_cellphone/nokiafc22.ttf" id="1_w1sqr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w1sqr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aiip6"]
+bg_color = Color(0.404511, 0.404511, 0.404511, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.47788, 0.47788, 0.47788, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_octwt"]
 bg_color = Color(0.0807833, 0.0807834, 0.0807833, 1)
@@ -28,6 +44,7 @@ shadow_size = 5
 [resource]
 default_font = ExtResource("1_w1sqr")
 Button/styles/focus = SubResource("StyleBoxEmpty_w1sqr")
+HSlider/styles/slider = SubResource("StyleBoxFlat_aiip6")
 Panel/styles/panel = SubResource("StyleBoxFlat_octwt")
 ProgressBar/styles/background = SubResource("StyleBoxFlat_w1sqr")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_cqnxl")

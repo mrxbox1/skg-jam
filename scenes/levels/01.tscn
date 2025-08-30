@@ -63,12 +63,3 @@ scale = Vector2(2.44, 2.75998)
 position = Vector2(443, 176)
 spook_duration = 0.2
 spook_text = "JUMPJUMPJUMPJUMPJUMPJUMPJUMPJUMPJUMPJUMPJUMPJUMPJUMPJUMP"
-
-[connection signal="body_entered" from="TileMapLayer/Haystack" to="TileMapLayer/Haystack" method="_on_body_entered"]
-[connection signal="body_exited" from="TileMapLayer/Haystack" to="TileMapLayer/Haystack" method="_on_body_exited"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@28356" to="TileMapLayer/@Area2D@28356" method="_on_body_entered"]
-[connection signal="body_exited" from="TileMapLayer/@Area2D@28356" to="TileMapLayer/@Area2D@28356" method="_on_body_exited"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@28357" to="TileMapLayer/@Area2D@28357" method="_on_body_entered"]
-[connection signal="body_exited" from="TileMapLayer/@Area2D@28357" to="TileMapLayer/@Area2D@28357" method="_on_body_exited"]
-[connection signal="body_entered" from="TileMapLayer/@Area2D@28358" to="TileMapLayer/@Area2D@28358" method="_on_body_entered"]
-[connection signal="body_exited" from="TileMapLayer/@Area2D@28358" to="TileMapLayer/@Area2D@28358" method="_on_body_exited"]
