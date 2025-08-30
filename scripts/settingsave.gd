@@ -7,11 +7,10 @@ extends Button
 func _ready() -> void:
 	sfx.value = SceneManager.pref_sfx
 	music.value = SceneManager.pref_music
-	brightness.value = SceneManager.pref_brightness
 
 func _process(delta: float) -> void:
-	SceneManager.save_settings(sfx.value, music.value, brightness.value)
+	SceneManager.save_settings(sfx.value, music.value)
 
 func _on_pressed() -> void:
-	SceneManager.save_settings(sfx.value, music.value, brightness.value)
+	SceneManager.save_settings(sfx.value, music.value)
 	SceneManager.goto_mainmenu()

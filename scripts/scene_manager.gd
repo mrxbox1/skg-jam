@@ -22,13 +22,11 @@ func _ready() -> void:
 	if err != OK:
 		conf.set_value("PREFERENCES", "SFX", 100.0)
 		conf.set_value("PREFERENCES", "MUSIC", 100.0)
-		conf.set_value("PREFERENCES", "MUSIC", 100.0)
 		conf.save("res://preferences.cfg")
 	else:
 		pref_sfx = conf.get_value("PREFERENCES", "SFX")
 		pref_music = conf.get_value("PREFERENCES", "MUSIC")
-		pref_brightness = conf.get_value("PREFERENCES", "BRIGHTNESS")
-		print(pref_sfx, pref_music, pref_brightness)
+		print(pref_sfx, pref_music)
 
 func switch_scene_to_file(scenefile: String) -> void:
 	get_tree().change_scene_to_file("res://scenes/" + scenefile)
@@ -36,17 +34,15 @@ func switch_scene_to_file(scenefile: String) -> void:
 func goto_mainmenu() -> void:
 	get_tree().change_scene_to_packed(mainmenu)
 	
-func save_settings(sfx:float, music:float, brightness:float) -> void:
+func save_settings(sfx:float, music:float) -> void:
 	var conf = ConfigFile.new()
 	conf.set_value("PREFERENCES", "SFX", sfx)
 	conf.set_value("PREFERENCES", "MUSIC", music)
-	conf.set_value("PREFERENCES", "BRIGHTNESS", brightness)
 	conf.save("res://preferences.cfg")
 	
 	pref_sfx = sfx
 	pref_music = music
-	pref_brightness = brightness
-	print(pref_sfx, pref_music, pref_brightness)
+	print(pref_sfx, pref_music)
 	
 	var index = AudioServer.get_bus_index("SFX")
 	AudioServer.set_bus_volume_db(index, pref_sfx)
