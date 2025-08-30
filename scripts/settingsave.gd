@@ -9,6 +9,9 @@ func _ready() -> void:
 	music.value = SceneManager.pref_music
 	brightness.value = SceneManager.pref_brightness
 
+func _process(delta: float) -> void:
+	SceneManager.save_settings(sfx.value, music.value, brightness.value)
+
 func _on_pressed() -> void:
 	SceneManager.save_settings(sfx.value, music.value, brightness.value)
 	SceneManager.goto_mainmenu()

@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnm0oq23wr2mh"]
+[gd_scene load_steps=6 format=3 uid="uid://bnm0oq23wr2mh"]
 
 [ext_resource type="Theme" uid="uid://b6jf8omhgvl46" path="res://scenes/default_theme.tres" id="1_5p8wc"]
 [ext_resource type="Script" uid="uid://br5smb5jq6p0" path="res://scripts/settingsave.gd" id="2_r6d6q"]
+[ext_resource type="AudioStream" uid="uid://xplpwg61w8lw" path="res://assets/preference_sfx.wav" id="3_f4mfi"]
+[ext_resource type="AudioStream" uid="uid://0hbi6uqdrwxo" path="res://assets/preference_music.wav" id="4_es4n0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_r6d6q"]
 font_size = 32
@@ -98,5 +100,15 @@ script = ExtResource("2_r6d6q")
 sfx = NodePath("../VBoxContainer/SFX")
 music = NodePath("../VBoxContainer/Music")
 brightness = NodePath("../VBoxContainer2/Brightness")
+
+[node name="PreferenceSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_f4mfi")
+autoplay = true
+bus = &"SFX"
+
+[node name="PreferenceMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_es4n0")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
