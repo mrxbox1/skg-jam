@@ -344,10 +344,12 @@ scale_amount_curve = SubResource("Curve_mqtce")
 [node name="Jump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_0h4jj")
 volume_db = -1.0
+bus = &"SFX"
 
 [node name="Death" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("15_f1ijy")
 volume_db = 3.0
+bus = &"SFX"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="area_entered" from="SafetyArea" to="." method="_on_safety_area_area_entered"]

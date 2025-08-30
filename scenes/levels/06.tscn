@@ -137,6 +137,7 @@ color = Color(0.2808, 0.46384, 0.78, 1)
 [node name="527281DlgebertMonologue-wind" type="AudioStreamPlayer" parent="CharacterBody2D"]
 stream = ExtResource("3_eefqn")
 autoplay = true
+bus = &"Music"
 
 [node name="Deco" type="Node" parent="."]
 
