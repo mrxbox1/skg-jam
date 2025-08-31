@@ -1,6 +1,43 @@
-[gd_scene load_steps=2 format=3 uid="uid://hp6jko64mb5j"]
+[gd_scene load_steps=5 format=3 uid="uid://hp6jko64mb5j"]
 
 [ext_resource type="Theme" uid="uid://b6jf8omhgvl46" path="res://scenes/default_theme.tres" id="1_jactx"]
+
+[sub_resource type="Animation" id="Animation_jactx"]
+resource_name = "credits"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.99, 30),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 5), Vector2(0, 5), Vector2(0, -1145)]
+}
+
+[sub_resource type="Animation" id="Animation_gu0mo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hf8av"]
+_data = {
+&"RESET": SubResource("Animation_gu0mo"),
+&"credits": SubResource("Animation_jactx")
+}
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -22,8 +59,77 @@ color = Color(0, 0, 0, 1)
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_right = 640.0
-offset_bottom = 360.0
+offset_bottom = 1492.0
 theme = ExtResource("1_jactx")
-text = "To be continued..."
+text = "
+
+
+
+
+
+
+To be continued...
+
+
+
+
+
+
+
+
+Credits
+
+Game, art, (some) sounds, and music made by blueice15
+
+Some sound effects provided by Freesound.org
+
+Fonts provided by dafont.com
+
+ 
+
+ Tools used
+
+Godot
+Libresprite
+GIMP
+jsfxr
+BeepBox
+Bosca Ceoil Blue
+
+
+Assets used
+
+Nokia Cellphone FC Font
+Heavy rain_clear recording
+Dripping echos and rumbling2
+Monologue Wind.wav
+Windows Command Prompt (Font)
+
+
+The demo (excluding all external assets) is under the MIT license. Feel free to fork it or modify it to your heart's content. The source code is available on GitHub.
+
+
+
+
+
+
+
+
+
+Thanks for playing!
+
+
+
+
+
+
+"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_hf8av")
+}
+autoplay = "credits"
