@@ -57,7 +57,7 @@ offset_top = -49.0
 offset_right = 223.0
 grow_vertical = 0
 theme = ExtResource("1_3vvtq")
-text = "v1.0
+text = "v1.2
 made by blueice15"
 vertical_alignment = 2
 
