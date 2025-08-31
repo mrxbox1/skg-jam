@@ -353,7 +353,7 @@ bus = &"SFX"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="area_entered" from="SafetyArea" to="." method="_on_safety_area_area_entered"]
-[connection signal="area_entered" from="Nostrils" to="." method="_on_nostrils_area_entered"]
 [connection signal="area_entered" from="Nostrils" to="." method="_on_safety_area_area_entered"]
+[connection signal="area_entered" from="Nostrils" to="." method="_on_nostrils_area_entered"]
 [connection signal="area_exited" from="Nostrils" to="." method="_on_nostrils_area_exited"]
 [connection signal="area_exited" from="Nostrils" to="." method="_on_safety_area_area_exited"]

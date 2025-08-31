@@ -82,7 +82,7 @@ label_settings = SubResource("LabelSettings_f4mfi")
 autowrap_mode = 2
 script = ExtResource("2_es4n0")
 
-[node name="Button" type="Button" parent="." node_paths=PackedStringArray("sfx", "music", "brightness")]
+[node name="Button" type="Button" parent="." node_paths=PackedStringArray("sfx", "music")]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -97,7 +97,6 @@ flat = true
 script = ExtResource("2_r6d6q")
 sfx = NodePath("../VBoxContainer/SFX")
 music = NodePath("../VBoxContainer/Music")
-brightness = NodePath("")
 
 [node name="PreferenceSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_f4mfi")
